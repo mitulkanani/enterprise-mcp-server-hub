@@ -1,0 +1,13 @@
+services:
+  mcp-hub:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - mcp_hub_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  mcp_hub_data:
